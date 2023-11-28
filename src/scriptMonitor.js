@@ -6,7 +6,7 @@ async function fetchData() {
   try {
     const response = await fetch('https://books-tsfn.onrender.com/Obras/' + GlobalId);
     const data = await response.json();
-
+    console.log(data)
     likeCount = data.like_total;
     dislikeCount = data.dislike_total;
 
@@ -84,7 +84,7 @@ const conseguirPuentes = () => {
   return fetch('https://books-tsfn.onrender.com/Obras')
     .then(response => response.json())
     .then(puentes => {
-      //console.log(puentes);
+    console.log(puentes);
 
       puentes.forEach(puente => {
         let puenteInfo = {
@@ -120,12 +120,12 @@ const miUbicacion = () => {
 
 const crearMapaYUbicar = (obj) => {
   const icon1 = {
-    url: "img/icono_negro.png",
+    url: "assets/img/icono_negro.png",
     scaledSize: new google.maps.Size(30, 30)
   };
 
   const icon2 = {
-    url: "img/obras.png",
+    url: "assets/img/obras.png",
     scaledSize: new google.maps.Size(30, 30)
   };
 
